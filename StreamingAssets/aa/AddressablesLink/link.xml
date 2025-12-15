@@ -1,0 +1,198 @@
+<linker>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReference" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceSprite" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.MeshFilter" preserve="all" />
+    <type fullname="UnityEngine.Mesh" preserve="all" />
+    <type fullname="UnityEngine.SkinnedMeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
+    <type fullname="UnityEngine.Events.ArgumentCache" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[System.Int32]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AudioClip" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="TMPro.TMP_SpriteAsset" preserve="all" />
+    <type fullname="TMPro.TMP_InputField" preserve="all" />
+    <type fullname="TMPro.TMP_FontAsset" preserve="all" />
+    <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
+    <type fullname="TMPro.TMP_SpriteCharacter" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_SpriteGlyph" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.FaceInfo_Legacy" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.FontAssetCreationSettings" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.KerningTable" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_Character" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/OnChangeEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/SelectionEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/SubmitEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/TextSelectionEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_InputField/TouchScreenKeyboardEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AnimationClip" preserve="all" />
+    <type fullname="UnityEngine.RuntimeAnimatorController" preserve="all" />
+    <type fullname="UnityEngine.Animator" preserve="all" />
+    <type fullname="UnityEngine.Animation" preserve="all" />
+  </assembly>
+  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="EasyPoleObby.Controllers.Addressable.Bases.AddressablePrefab" preserve="all" />
+    <type fullname="EasyPoleObby.Controllers.Addressable.SkinLoader" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.WheelWindow.WheelItemController" preserve="all" />
+    <type fullname="bl_MovementJoystick" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Panels.Vip.VipProductElementController" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Resets.ResetWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Panels.Skins.SkinTabElementController" preserve="all" />
+    <type fullname="SimpleMultiplayer.Mechanics.Leaderboard.LeaderboardTable" preserve="all" />
+    <type fullname="bl_Joystick" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.PlayingWindow.PlayingWindow" preserve="all" />
+    <type fullname="DevAssistent.Controllers.Localizations.SPLocalizedFontController" preserve="all" />
+    <type fullname="SimpleMultiplayer.Mechanics.Leaderboard.LeaderboardController" preserve="all" />
+    <type fullname="SimpleMultiplayer.Mechanics.Chat.ChatBubbleMessage" preserve="all" />
+    <type fullname="SimpleMultiplayer.Mechanics.Leaderboard.LeaderboardTextElement" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Panels.Poles.PoleTabController" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Panels.Coins.CoinsTabElementController" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.GiftWindow.GiftWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Settings.SettingsWindow" preserve="all" />
+    <type fullname="DevAssistent.Controllers.Envorienments.SPCallGameReadyController" preserve="all" />
+    <type fullname="DevAssistent.Controllers.Ads.AdsBlockSelector" preserve="all" />
+    <type fullname="SimpleMultiplayer.Mechanics.Chat.ChatPanel" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Panels.Skins.SkinsTabController" preserve="all" />
+    <type fullname="EasyPoleObby.Controllers.Addressable.SpritesLoader" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.AdsWindow.AdsWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.GiftWindow.PrizeSlot" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.SkinsWindow" preserve="all" />
+    <type fullname="DevAssistent.Controllers.Components.SPMarketObjectsController" preserve="all" />
+    <type fullname="DevAssistent.Controllers.UI.UITimer" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Offers.StarterpackOfferDisplayer" preserve="all" />
+    <type fullname="EasyPoleObby.Logic.UI.DraggableVisualizator" preserve="all" />
+    <type fullname="Lovatto.MobileInput.bl_TouchBloquer" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.StartTutorialWindow.StartTutorialWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Settings.SettingValueSlider" preserve="all" />
+    <type fullname="bl_MobileButton" preserve="all" />
+    <type fullname="EasyPoleObby.Logic.UI.HorizontalDraggable" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Panels.Coins.CoinsTabController" preserve="all" />
+    <type fullname="EasyPoleObby.Controllers.Animations.AnimationEventsTrigger" preserve="all" />
+    <type fullname="EasyPoleObby.Controllers.Windows.SelectPlayerDataWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.WheelWindow.WheelController" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Rules.RulesWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.ChatTransparencyController" preserve="all" />
+    <type fullname="EasyPoleObby.UI.OnBoughtMessageReciever" preserve="all" />
+    <type fullname="DevAssistent.Controllers.Localizations.SPLocalizedTextController" preserve="all" />
+    <type fullname="SimpleMultiplayer.Mechanics.Leaderboard.LeaderboardPlayer" preserve="all" />
+    <type fullname="DevAssistent.Controllers.Helpers.MobileUiScalerController" preserve="all" />
+    <type fullname="EasyPoleObby.Logic.UI.WorldProgress" preserve="all" />
+    <type fullname="EasyPoleObby.Logic.UI.CustomSliderPole" preserve="all" />
+    <type fullname="EasyPoleObby.Controllers.Social.SocialPanelController" preserve="all" />
+    <type fullname="EasyPoleObby.DataStructures.Transfer.Configs.UI.WindowsConfig" preserve="all" />
+    <type fullname="EasyPoleObby.Controllers.Purchases.PriceViewController" preserve="all" />
+    <type fullname="DevAssistent.Controllers.Ads.SPInterstitialAdsController" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Settings.AvailableLanguageElement" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Info.InfoWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Flags.BuyFlagsWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Offers.StarterpackOfferWindow" preserve="all" />
+    <type fullname="DevAssistent.Controllers.Components.SPGameObjectsController" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.WheelWindow.WheelWindow" preserve="all" />
+    <type fullname="EasyPoleObby.Controllers.Addressable.TmpAtlasLoader" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Panels.Poles.PoleTabElementController" preserve="all" />
+    <type fullname="EasyPoleObby.DataStructures.Transfer.PrizeConfig" preserve="all" />
+    <type fullname="DevAssistent.Controllers.UI.CustomAnimationButtonController" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Settings.SelectLanguageWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Flags.FlagButton" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.Flags.FlagsWindow" preserve="all" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Panels.Vip.VipTabController" preserve="all" />
+    <type fullname="bl_JoystickArea" preserve="all" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2/Pair[System.String,UnityEngine.GameObject]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2/Pair[System.String,UnityEngine.Material]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2[System.String,UnityEngine.GameObject]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2[System.String,UnityEngine.Material]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2[System.String,UnityEngine.Texture]" preserve="nothing" serialized="true" />
+    <type fullname="EasyPoleObby.Controllers.Addressable.SkinLoader/AttachmentData" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.Controllers.Helpers.RectTarget" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2/Pair[EasyPoleObby.DataStructures.Transfer.Configs.Remote.GameResourceType,UnityEngine.Sprite]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2/Pair[System.String,TMPro.TMP_Text]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2/Pair[System.String,UnityEngine.UI.Image]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2[EasyPoleObby.DataStructures.Transfer.Configs.Remote.GameResourceType,UnityEngine.Sprite]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2[System.String,TMPro.TMP_Text]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Custom.Collections.Generic.SerializableDictionary`2[System.String,UnityEngine.UI.Image]" preserve="nothing" serialized="true" />
+    <type fullname="DevAssistent.DataStructures.Transfer.Models.Components.MarketObjects" preserve="nothing" serialized="true" />
+    <type fullname="EasyPoleObby.Controllers.Animations.AnimationEventsTrigger/EventTrigger" preserve="nothing" serialized="true" />
+    <type fullname="EasyPoleObby.DataStructures.Transfer.Configs.Addressable.UI.TMPAtlasConfig" preserve="nothing" serialized="true" />
+    <type fullname="EasyPoleObby.DataStructures.Transfer.Configs.Addressable.UI.UISpriteConfig" preserve="nothing" serialized="true" />
+    <type fullname="EasyPoleObby.DataStructures.Transfer.Configs.UI.WindowConfig" preserve="nothing" serialized="true" />
+    <type fullname="EasyPoleObby.DataStructures.Transfer.Struct.PurchaseEvent" preserve="nothing" serialized="true" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Models.ShopButtonsIcons" preserve="nothing" serialized="true" />
+    <type fullname="EasyPoleObby.UI.Windows.SkinsWindow.Models.ShopButtonsIcons/IconData" preserve="nothing" serialized="true" />
+    <type fullname="bl_MobileButton/OnClick" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.UI.HorizontalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.ScrollRect" preserve="all" />
+    <type fullname="UnityEngine.UI.Button" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.Mask" preserve="all" />
+    <type fullname="UnityEngine.UI.Toggle" preserve="all" />
+    <type fullname="UnityEngine.UI.LayoutElement" preserve="all" />
+    <type fullname="UnityEngine.UI.Slider" preserve="all" />
+    <type fullname="UnityEngine.UI.AspectRatioFitter" preserve="all" />
+    <type fullname="UnityEngine.UI.Scrollbar" preserve="all" />
+    <type fullname="UnityEngine.UI.ToggleGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />
+    <type fullname="UnityEngine.UI.Outline" preserve="all" />
+    <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger" preserve="all" />
+    <type fullname="UnityEngine.UI.RectMask2D" preserve="all" />
+    <type fullname="UnityEngine.UI.GridLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/Entry" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/TriggerEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.AnimationTriggers" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ScrollRect/ScrollRectEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Scrollbar/ScrollEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Slider/SliderEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Toggle/ToggleEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+    <type fullname="UnityEngine.Canvas" preserve="all" />
+    <type fullname="UnityEngine.CanvasGroup" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextCoreModule">
+    <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.GlyphMetrics" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.GlyphRect" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.Glyph" preserve="nothing" serialized="true" />
+  </assembly>
+</linker>
