@@ -16,13 +16,25 @@
         --tg-primary-2: #37b4f7;
         --tg-text: #0f1c2e;
         --tg-bg: #eaf2f9;
+        --app-height: 100vh;
+        --app-width: 100vw;
+      }
+
+      html, body {
+        width: var(--app-width);
+        height: var(--app-height);
+        margin: 0;
+      }
+
+      body {
+        overflow: hidden;
       }
 
       #orientation-warning {
         position: fixed;
         inset: 0;
         display: none;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
         padding: 24px;
         background:
@@ -35,6 +47,22 @@
 
       body.show-orientation-warning #orientation-warning {
         display: flex;
+      }
+
+      #orientation-warning .tg-card {
+        margin: 0 0 28px;
+        max-height: 92vh;
+        overflow: auto;
+      }
+
+      @media (min-height: 720px) {
+        #orientation-warning {
+          align-items: center;
+        }
+        #orientation-warning .tg-card {
+          margin-bottom: 0;
+          max-height: none;
+        }
       }
 
       .tg-card {
@@ -128,6 +156,36 @@
     
     <script src="Template/UnityProgress.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script> <script src="scripts/telegram-gifts-helpers.js"></script> <script>try{if(window.Telegram&&window.Telegram.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand();}}catch(e){console.log('TG init skip',e);}</script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script>
+      (function () {
+        const tg = window.Telegram?.WebApp;
+        const updateViewportVars = () => {
+          const hCandidates = [tg?.viewportHeight, tg?.viewportStableHeight, window.innerHeight].filter((v) => Number.isFinite(v));
+          const wCandidates = [tg?.viewportWidth, window.innerWidth].filter((v) => Number.isFinite(v));
+          const h = Math.max(320, ...hCandidates);
+          const w = Math.max(320, ...wCandidates);
+          document.documentElement.style.setProperty('--app-height', `${h}px`);
+          document.documentElement.style.setProperty('--app-width', `${w}px`);
+        };
+
+        try {
+          if (tg) {
+            tg.ready();
+            tg.expand();
+            tg.requestFullscreen?.();
+            tg.onEvent?.('viewportChanged', updateViewportVars);
+          }
+        } catch (e) {
+          console.log('TG init skip', e);
+        }
+
+        updateViewportVars();
+        window.addEventListener('resize', updateViewportVars);
+        window.addEventListener('orientationchange', updateViewportVars);
+      })();
+    </script>
 
     <script>
       window.alert = console.log;
@@ -180,12 +238,12 @@
         <div class="tg-card__header">
           <div class="tg-card__badge"></div>
           <div>
-            <div class="tg-card__title">Поверните устройство</div>
-            <div class="tg-card__subtitle">Игра работает только в альбомной ориентации</div>
+            <div class="tg-card__title" data-orientation-title>Поверните устройство</div>
+            <div class="tg-card__subtitle" data-orientation-subtitle>Игра работает только в альбомной ориентации</div>
           </div>
         </div>
         <div class="tg-card__body">
-          <p><strong>Чтобы продолжить</strong>, переведите телефон или планшет в горизонтальное положение.</p>
+          <p data-orientation-instruction><strong>Чтобы продолжить</strong>, переведите телефон или планшет в горизонтальное положение.</p>
           <p>После поворота это сообщение исчезнет автоматически.</p>
         </div>
         <div class="tg-card__actions">
@@ -208,22 +266,51 @@
       const container = document.querySelector("#unity-container");
       const canvas = document.querySelector("#unity-canvas");
       const orientationCheckButton = document.querySelector("#orientation-check");
+      const orientationTitle = document.querySelector("[data-orientation-title]");
+      const orientationSubtitle = document.querySelector("[data-orientation-subtitle]");
+      const orientationInstruction = document.querySelector("[data-orientation-instruction]");
+      const ORIENTATION_TARGET = "landscape"; // "landscape" | "portrait" | "any"
       let unityInstanceStarted = false;
 
       const isPortrait = () =>
         window.matchMedia("(orientation: portrait)").matches || window.innerHeight > window.innerWidth;
 
-      function toggleOrientationWarning() {
-        const portrait = isPortrait();
-        document.body.classList.toggle("show-orientation-warning", portrait);
+      const updateOrientationTexts = () => {
+        const copy = {
+          landscape: {
+            title: "Поверните устройство",
+            subtitle: "Игра работает только в альбомной ориентации",
+            instruction: "<strong>Чтобы продолжить</strong>, переведите устройство в горизонтальное положение.",
+          },
+          portrait: {
+            title: "Поверните устройство",
+            subtitle: "Игра работает только в портретной ориентации",
+            instruction: "<strong>Чтобы продолжить</strong>, переведите устройство в вертикальное положение.",
+          },
+        }[ORIENTATION_TARGET];
 
-        if (!portrait && screen.orientation && screen.orientation.lock) {
+        if (!copy) return;
+        if (orientationTitle) orientationTitle.textContent = copy.title;
+        if (orientationSubtitle) orientationSubtitle.textContent = copy.subtitle;
+        if (orientationInstruction) orientationInstruction.innerHTML = copy.instruction;
+      };
+
+      const shouldBlockByOrientation = () => {
+        if (ORIENTATION_TARGET === "any" || ORIENTATION_TARGET === "portrait") return false;
+        return isPortrait(); // default landscape
+      };
+
+      function toggleOrientationWarning() {
+        const needWarning = shouldBlockByOrientation();
+        document.body.classList.toggle("show-orientation-warning", needWarning);
+
+        if (!needWarning && ORIENTATION_TARGET === "landscape" && screen.orientation && screen.orientation.lock) {
           screen.orientation.lock("landscape").catch(() => {});
         }
       }
 
-      function startUnityIfLandscape() {
-        if (unityInstanceStarted || isPortrait()) {
+      function startUnityIfReady() {
+        if (unityInstanceStarted || shouldBlockByOrientation()) {
           return;
         }
 
@@ -244,7 +331,7 @@
 
       const handleOrientationUpdate = () => {
         toggleOrientationWarning();
-        startUnityIfLandscape();
+        startUnityIfReady();
       };
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -260,6 +347,7 @@
       }
       window.addEventListener("orientationchange", handleOrientationUpdate);
       window.addEventListener("resize", handleOrientationUpdate);
+      updateOrientationTexts();
       handleOrientationUpdate();
     </script>
     
