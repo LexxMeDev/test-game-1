@@ -34,7 +34,7 @@
         position: fixed;
         inset: 0;
         display: none;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         padding: 24px;
         background:
@@ -47,22 +47,6 @@
 
       body.show-orientation-warning #orientation-warning {
         display: flex;
-      }
-
-      #orientation-warning .tg-card {
-        margin: 0 0 28px;
-        max-height: 92vh;
-        overflow: auto;
-      }
-
-      @media (min-height: 720px) {
-        #orientation-warning {
-          align-items: center;
-        }
-        #orientation-warning .tg-card {
-          margin-bottom: 0;
-          max-height: none;
-        }
       }
 
       .tg-card {
@@ -174,7 +158,6 @@
           if (tg) {
             tg.ready();
             tg.expand();
-            tg.requestFullscreen?.();
             tg.onEvent?.('viewportChanged', updateViewportVars);
           }
         } catch (e) {
@@ -244,7 +227,6 @@
         </div>
         <div class="tg-card__body">
           <p data-orientation-instruction><strong>Чтобы продолжить</strong>, переведите телефон или планшет в горизонтальное положение.</p>
-          <p>После поворота это сообщение исчезнет автоматически.</p>
         </div>
         <div class="tg-card__actions">
           <button type="button" id="orientation-check" class="tg-card__button">Готово, я повернул(а)</button>
@@ -263,6 +245,8 @@
         productVersion: "15.11.25_mini_app",
       };
 
+      const tg = window.Telegram?.WebApp;
+      const isMobileUA = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       const container = document.querySelector("#unity-container");
       const canvas = document.querySelector("#unity-canvas");
       const orientationCheckButton = document.querySelector("#orientation-check");
@@ -349,6 +333,15 @@
       window.addEventListener("resize", handleOrientationUpdate);
       updateOrientationTexts();
       handleOrientationUpdate();
+
+      const allowAutoFullscreen = ORIENTATION_TARGET !== "portrait" || isMobileUA;
+      if (tg && allowAutoFullscreen) {
+        try {
+          tg.requestFullscreen?.();
+        } catch (e) {
+          console.log("TG fullscreen skip", e);
+        }
+      }
     </script>
     
     
