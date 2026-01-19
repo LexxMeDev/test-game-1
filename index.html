@@ -34,7 +34,7 @@
         position: fixed;
         inset: 0;
         display: none;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         padding: 24px;
         background:
@@ -47,22 +47,6 @@
 
       body.show-orientation-warning #orientation-warning {
         display: flex;
-      }
-
-      #orientation-warning .tg-card {
-        margin: 0 0 28px;
-        max-height: 92vh;
-        overflow: auto;
-      }
-
-      @media (min-height: 720px) {
-        #orientation-warning {
-          align-items: center;
-        }
-        #orientation-warning .tg-card {
-          margin-bottom: 0;
-          max-height: none;
-        }
       }
 
       .tg-card {
@@ -152,7 +136,7 @@
       }
     </style>
 
-    <title>Runner Adventure</title>
+    <title>Obby 3D Parkour Online</title>
     
     <script src="Template/UnityProgress.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script> <script src="scripts/telegram-gifts-helpers.js"></script> <script>try{if(window.Telegram&&window.Telegram.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand();}}catch(e){console.log('TG init skip',e);}</script>
@@ -243,7 +227,6 @@
         </div>
         <div class="tg-card__body">
           <p data-orientation-instruction><strong>Чтобы продолжить</strong>, переведите телефон или планшет в горизонтальное положение.</p>
-          <p>После поворота это сообщение исчезнет автоматически.</p>
         </div>
         <div class="tg-card__actions">
           <button type="button" id="orientation-check" class="tg-card__button">Готово, я повернул(а)</button>
@@ -254,13 +237,12 @@
       const buildUrl = "Build";
       const config = {
         dataUrl: buildUrl + "/Source.data.unityweb",
-        frameworkUrl: buildUrl + "/Source.asm.framework.js.unityweb",
-        codeUrl: buildUrl + "/Source.asm.js.unityweb",
-        memoryUrl: buildUrl + "/Source.asm.mem.unityweb",
+        frameworkUrl: buildUrl + "/Source.framework.js.unityweb",
+        codeUrl: buildUrl + "/Source.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "SoParty Games",
-        productName: "Runner Adventure",
-        productVersion: "1.0",
+        productName: "Obby 3D Parkour Online",
+        productVersion: "15.11.25_mini_app",
       };
 
       const tg = window.Telegram?.WebApp;
@@ -271,7 +253,7 @@
       const orientationTitle = document.querySelector("[data-orientation-title]");
       const orientationSubtitle = document.querySelector("[data-orientation-subtitle]");
       const orientationInstruction = document.querySelector("[data-orientation-instruction]");
-      const ORIENTATION_TARGET = "portrait"; // "landscape" | "portrait" | "any"
+      const ORIENTATION_TARGET = "landscape"; // "landscape" | "portrait" | "any"
       let unityInstanceStarted = false;
 
       const isPortrait = () =>
@@ -319,7 +301,7 @@
         unityInstanceStarted = true;
 
         const script = document.createElement("script");
-        const loaderUrl = buildUrl + "/Source.asm.loader.js";
+        const loaderUrl = buildUrl + "/Source.loader.js";
 
         UnityProgress(0);
         script.src = loaderUrl;
